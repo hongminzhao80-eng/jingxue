@@ -1,0 +1,6 @@
+interface:
+  display_name: "Short Video Viral Studio"
+  short_description: "解析爆款短视频、匹配用户自拍素材并生成可追溯成片"
+  default_prompt: "使用 $short-video-viral-studio 执行短视频爆款解析、自拍素材匹配、脚本分镜、受控 AI 片段生成和最终并线剪辑；未确认付费前只运行 validate、estimate 或 dry-run。"
+policy:
+  allow_implicit_invocation: false

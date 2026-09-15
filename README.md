@@ -1,2 +1,21 @@
 # jingxue
-用codex开发的项目中使用这个skill，具体流程是解析来自短视频平台的视频链接或文案，进行分析亮点、爆点等爆款公式，用户自拍素材进行匹配生成视频、或直接在AI总策划下生成具原视频爆款公式的新视频脚本，AI分镜头提示词，生成AI视频片段，最后剪辑合成与用户自拍素材匹配的视频剪辑环节并线，并线为最后剪辑环节的生产线路
+
+这是一个供 Codex 项目调用的 **Skill**，不是独立智能体。
+
+Skill 名称：`short-video-viral-studio`
+
+能力范围：
+
+- 解析短视频链接或文案中的爆款公式
+- 强制要求并分析用户自拍素材
+- 将自拍素材与爆款结构做匹配映射
+- 生成新脚本与 AI 分镜提示词
+- 在得到明确授权后再进入付费 API 生成阶段
+- 将 AI 片段与用户自拍素材并线剪辑
+- 输出最终审计结果，以及来源/约束溯源信息
+
+主要文件：
+
+- `.codex/skills/short-video-viral-studio/SKILL.md`
+- `.codex/skills/short-video-viral-studio/agents/openai.yaml`
+- `.codex/skills/short-video-viral-studio/references/output-schema.md`

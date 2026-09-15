@@ -1,0 +1,44 @@
+name: short-video-viral-studio
+description: >-
+  Codex 可调用 Skill：解析爆款短视频公式，强制纳入用户自拍素材，生成脚本、
+  AI 分镜、AI 片段计划，并输出并线剪辑与最终审计结果。
+entrypoint: ../SKILL.md
+output_schema: ../references/output-schema.md
+
+inputs:
+  required:
+    - selfie_assets
+  one_of:
+    - source_video_url
+    - source_text
+  properties:
+    source_video_url:
+      type: string
+      description: 短视频平台链接，用于提取爆款公式
+    source_text:
+      type: string
+      description: 参考文案，用于提取爆款公式
+    selfie_assets:
+      type: array
+      description: 用户自拍素材列表，必须参与最终成片
+    confirm_paid_api:
+      type: boolean
+      description: 是否已明确授权调用付费视频/语音/媒体 API
+      default: false
+
+requirements:
+  - 必须先做爆款公式解析，再做素材匹配，不能跳步直接生成最终片
+  - 没有 selfie_assets 时必须拒绝继续执行
+  - 必须输出自拍素材与爆款结构的匹配关系
+  - 必须输出脚本与 AI 分镜
+  - 未经 confirm_paid_api 明确授权，不得触发付费 API
+  - 最终必须输出并线剪辑方案与审计结果
+  - 所有阶段必须保留来源追踪与约束追踪
+
+deliverables:
+  - viral_analysis
+  - asset_mapping
+  - script_and_storyboard
+  - generation_plan_or_results
+  - parallel_edit_timeline
+  - final_audit

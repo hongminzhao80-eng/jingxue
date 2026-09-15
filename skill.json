@@ -1,0 +1,24 @@
+{
+  "name": "short-video-viral-pipeline",
+  "description": "解析爆款公式、匹配用户自拍素材并输出 AI 分镜与并线成片时间线的 Codex Skill",
+  "entrypoint": "python /home/runner/work/jingxue/jingxue/jingxue_skill.py --stage <stage> --input @payload.json",
+  "stages": [
+    "analyze",
+    "match",
+    "script",
+    "generate",
+    "compose",
+    "pipeline"
+  ],
+  "required_inputs": [
+    "reference_text | reference_url",
+    "user_assets"
+  ],
+  "outputs": [
+    "爆款解析报告",
+    "素材匹配方案",
+    "新视频脚本 + 分镜提示词",
+    "AI 视频片段",
+    "最终成片"
+  ]
+}
